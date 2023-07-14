@@ -9,6 +9,8 @@ This is a simple experimental frontend which allows me to interact with privateG
 
 Note: for now it has only semantic serch. Q/A feature would be next.
 
+![Example](example.webp)
+
 ## Getting Started
 
 ### Setting up privateGPT
