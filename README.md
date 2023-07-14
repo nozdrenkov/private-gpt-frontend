@@ -3,13 +3,15 @@
 I really enjoy using [privateGPT](https://github.com/imartinez/privateGPT) and ask questions to all my documents. It would be nice if it had:
 
 - a proper frontend, so I don't have to enter my questions into terminal,
-- ability to have a simple semantic search (if I don't want to wait while GPT response).
+- ability to have a quick simple semantic search (if I don't want to wait LLM response).
 
 This is a simple experimental frontend which allows me to interact with privateGPT from the browser.
 
 Note: for now it has only semantic serch. Q/A feature would be next.
 
 ![Example](example.webp)
+
+Note: blue numer is a `cos` distance between embedding vectors. The smaller the number, the more close these sentences.
 
 ## Getting Started
 
