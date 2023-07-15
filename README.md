@@ -29,8 +29,6 @@ pydantic==1.10.11
 
 3. Run `pip3 install -r requirements.txt` in your `privateGPT` folder.
 
-4. Run flask backend with `python3 privateGptServer.py`.
-
 ### Setting up frontend
 
 4. clone this repo with (or download zip archive and extract it):
@@ -39,18 +37,22 @@ pydantic==1.10.11
 git clone https://github.com/nozdrenkov/private-gpt-frontend.git
 ```
 
-5. In the `private-gpt-frontend` install all dependencies:
+5. Copy the `privateGptServer.py` script from the `private-gpt-frontend` folder into the `privateGPT` folder.
+
+6. Run flask backend with `python3 privateGptServer.py` (in `privateGPT` folder).
+
+7. In the `private-gpt-frontend` install all dependencies:
 
 ```bash
 npm install
 ```
 
-6. Run the frontend with (in the same `private-gpt-frontend` folder):
+8. Run the frontend with (in the same `private-gpt-frontend` folder):
 
 ```bash
 npm run dev
 ```
 
-7. Open http://localhost:3000 in the browser and start searching!
+9. Open http://localhost:3000 in the browser and start searching!
 
-8. You can also put your search term in ther URL http://localhost:3000/?search=your%20question (this way you can setup automation with [Chrome search engine](https://support.google.com/chrome/answer/95426) or using [Alfred](https://www.alfredapp.com/)).
+10. You can also put your search term in ther URL http://localhost:3000/?search=your%20question (this way you can setup automation with [Chrome search engine](https://support.google.com/chrome/answer/95426) or using [Alfred](https://www.alfredapp.com/)).
