@@ -14,6 +14,33 @@ type ErrorData = {
   error: string;
 };
 
+const createErrorMessage = (error: any) => {
+  let errorText =
+    "Error fetching results... \n" + "Maybe backend script isn't running?\n";
+
+  errorText += "\n------------------\n";
+  if (
+    (error as any).response &&
+    (error as any).response.data &&
+    (error as any).response.data.error
+  ) {
+    errorText +=
+      "error.response.data.error:\n" +
+      JSON.stringify((error as any).response.data.error, null, 2);
+  }
+
+  errorText += "\n------------------\n";
+  errorText += "error:\n" + JSON.stringify(error, null, 2);
+
+  errorText += "\n------------------\n";
+  if ((error as any).response) {
+    errorText +=
+      "error.response:\n" + JSON.stringify((error as any).response, null, 2);
+  }
+
+  return errorText;
+};
+
 export default function Home() {
   const router = useRouter();
   const [query, setQuery] = useState<string>("");
@@ -51,7 +78,7 @@ export default function Home() {
         setResponses(result.data);
         setError("");
       } catch (error) {
-        setError("Error fetching results. Please try again later.");
+        setError(createErrorMessage(error));
         setResponses([]);
       }
     } else {
@@ -104,7 +131,7 @@ export default function Home() {
       </div>
       {error && (
         <div className="w-full max-w-4xl mx-auto mb-4 bg-red-500 text-white rounded-md p-4">
-          {error}
+          <pre className="whitespace-pre">{error}</pre>
         </div>
       )}
       {responses.map((response, index) => (
